@@ -84,18 +84,20 @@ console.log(triangle(2, 3, 2));
 //the calcualte high low or medium usage 
 
 
-function dataUsage(day){ 
+function dataUsage(planLimit, day, usage){ 
     let daysDue = 30;
-    
-    if (daysDue > day){
-        let product = daysDue - day;
-        console.log(`${day}` + ' days used ' + `${product}` + ' days left');
-    } 
-    else if (daysDue <= day){
-        return('No more days left for data');
-    }
- 
-   
+    let product = daysDue - day;
+    console.log(`${day}` + ' days used ' + `${product}` + ' days left.');
+    let average = planLimit / daysDue;
+    console.log('Average daily use ' + `${average}` + ' GB/day');
+    let dataUsed = planLimit - usage;
+    console.log('You have ' + `${dataUsed}` + 'GB left');
+    let average2 = usage / day;
+    console.log('You are EXCEEDING your average daily use ' + '(' + `${average2}` + ' GB/day)');
+    let dataOver = 111.95 - planLimit;
+    console.log('continuing this high usage, you will exceed your data plan by ' + `${dataOver}`);
+    let dataManage = 44 / 15;
+    console.log('To stay below your data plan, use no more than ' + `${dataManage}` + 'GB/day');
 }
 
-console.log(dataUsage(15));
+console.log(dataUsage(100, 15, 56));
